@@ -13,16 +13,9 @@
 
 <body>
     <div id="app">
-        <img-comp 
-        v-for="image in gallery" 
-       
-        :t_img="image.title" 
-        :src_img="image.src"
-        :key="image.id"
-    
-        >
-    </img-comp>
-        
+        <img-comp v-for="image in gallery" :t_img="image.title" :src_img="image.src" :key="image.id">
+        </img-comp>
+
     </div>
 
     </div>
@@ -55,45 +48,47 @@
     <span class="img"><img :src="src_img" :alt="alt"></span>
     <span class="name">{{t_img}}</span>
 </div>`,
-            methods:{ 
-                
-            }
+        methods: {
+
+        }
     })
     const app = new Vue({
         el: "#app",
         data: function () {
             return {
-                gallery:[
-                    {id:1, title: 'Rick Sanchez',src: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg'},
-                    {id:2, title: 'Morty Smith  ',src: 'https://rickandmortyapi.com/api/character/avatar/2.jpeg'},
-                    {id:3, title: 'Summer Smith  ',src: 'https://rickandmortyapi.com/api/character/avatar/3.jpeg'},
-                    {id:4, title: 'Beth Smith  ',src: 'https://rickandmortyapi.com/api/character/avatar/4.jpeg'},
-                    {id:5, title: 'Jerry Smith  ',src: 'https://rickandmortyapi.com/api/character/avatar/5.jpeg'},
-                    
+                gallery: [
+                    { id: 1, title: 'Rick Sanchez', src: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg' },
+                    { id: 2, title: 'Morty Smith  ', src: 'https://rickandmortyapi.com/api/character/avatar/2.jpeg' },
+                    { id: 3, title: 'Summer Smith  ', src: 'https://rickandmortyapi.com/api/character/avatar/3.jpeg' },
+                    { id: 4, title: 'Beth Smith  ', src: 'https://rickandmortyapi.com/api/character/avatar/4.jpeg' },
+                    { id: 5, title: 'Jerry Smith  ', src: 'https://rickandmortyapi.com/api/character/avatar/5.jpeg' },
+
                 ],
             }
         },
     })
 </script>
 <style>
+    body {
+        background-image: url(./assets/img/bkg.png);
+        background-size: cover;
+        background-position: center;
+        padding: 20px;
+        color: green;
+    }
 
-body {
-    background-image: url(./assets/img/bkg.png);
-    background-size: cover;
-    background-position: center;
-    padding: 20px;
-    color: green;
-}
-.list {
-    padding: 20px;
-}
-.img img {
-    width: 150px;
-    height: 100%;
-    border-radius: 50%;
-}
-.name {
-    font-size: 30px;
-    padding: 0 20px;
-}
-</style>
+    .list {
+        padding: 20px;
+    }
+
+    .img img {
+        width: 150px;
+        height: 100%;
+        border-radius: 50%;
+    }
+
+    .name {
+        font-size: 30px;
+        padding: 0 20px;
+    }
+</style> 
